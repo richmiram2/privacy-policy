@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — GroceryHelp</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:   #1B5E20;
+      --green-mid:    #2E7D32;
+      --green-light:  #43A047;
+      --green-pale:   #E8F5E9;
+      --green-border: #C8E6C9;
+      --text-primary: #1A1A1A;
+      --text-secondary: #555;
+      --text-muted:   #888;
+      --surface:      #FFFFFF;
+      --bg:           #F7FBF7;
+      --rule:         #D4E8D4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 60%, var(--green-light) 100%);
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+    }
+
+    .header-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 18px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+    }
+
+    .header-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #fff;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      font-weight: 300;
+      position: relative;
+    }
+
+    /* ── Layout ─────────────────────────────────────────────────────── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Effective date pill ─────────────────────────────────────────── */
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-pale);
+      border: 1px solid var(--green-border);
+      color: var(--green-mid);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin: 32px 0 40px;
+    }
+
+    .date-pill svg {
+      width: 14px; height: 14px;
+      fill: var(--green-mid);
+    }
+
+    /* ── Intro card ───────────────────────────────────────────────── */
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--green-border);
+      border-left: 4px solid var(--green-mid);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      color: var(--text-secondary);
+      font-size: 0.97rem;
+    }
+
+    /* ── Sections ────────────────────────────────────────────────── */
+    section {
+      margin-bottom: 48px;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section:nth-child(1)  { animation-delay: 0.05s; }
+    section:nth-child(2)  { animation-delay: 0.10s; }
+    section:nth-child(3)  { animation-delay: 0.15s; }
+    section:nth-child(4)  { animation-delay: 0.20s; }
+    section:nth-child(5)  { animation-delay: 0.25s; }
+    section:nth-child(6)  { animation-delay: 0.30s; }
+    section:nth-child(7)  { animation-delay: 0.35s; }
+    section:nth-child(8)  { animation-delay: 0.40s; }
+    section:nth-child(9)  { animation-delay: 0.45s; }
+    section:nth-child(10) { animation-delay: 0.50s; }
+    section:nth-child(11) { animation-delay: 0.55s; }
+    section:nth-child(12) { animation-delay: 0.60s; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--green-mid);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      color: var(--green-deep);
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      font-size: 0.97rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ───────────────────────────────────────────────────── */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+
+    ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+      color: var(--text-secondary);
+      font-size: 0.97rem;
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--green-light);
+      border-radius: 50%;
+      margin-top: 9px;
+    }
+
+    /* ── Warning card ────────────────────────────────────────────── */
+    .warning-card {
+      background: #FFF8E1;
+      border: 1px solid #FFE082;
+      border-left: 4px solid #F9A825;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 16px 0 0;
+      color: #5D4037;
+      font-size: 0.93rem;
+    }
+
+    /* ── Contact card ────────────────────────────────────────────── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--green-pale), #fff);
+      border: 1px solid var(--green-border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .contact-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--green-deep);
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      font-size: 0.93rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      background: var(--green-mid);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 12px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .contact-card a:hover {
+      background: var(--green-deep);
+      transform: translateY(-1px);
+    }
+
+    /* ── Divider ─────────────────────────────────────────────────── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0 0 48px;
+    }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--rule);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    footer strong { color: var(--green-mid); }
+
+    /* ── Mobile ──────────────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      header { padding: 48px 20px 40px; }
+      .container { padding: 0 16px 60px; }
+      .intro-card { padding: 18px 20px; }
+      .contact-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
+      </svg>
+    </div>
+    <h1>Terms of Service</h1>
+    <p>GroceryHelp — One Code Studios</p>
+  </header>
+
+  <div class="container">
+
+    <div class="date-pill">
+      <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 18H5V8h14v13z"/></svg>
+      Effective: January 1, 2026
+    </div>
+
+    <div class="intro-card">
+      These Terms of Service ("Terms") govern your use of the GroceryHelp mobile application ("the App"), developed and operated by One Code Studios ("we," "us," or "our"). By downloading, installing, or using GroceryHelp, you agree to be bound by these Terms. If you do not agree, please do not use the App.
+    </div>
+
+    <hr />
+
+    <!-- 1 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <h2>Use of the App</h2>
+      </div>
+      <p>GroceryHelp is a grocery price comparison tool that helps you find, track, and compare prices at stores near you. You may use the App for personal, non-commercial purposes only.</p>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the App in any way that violates applicable local, national, or international law.</li>
+        <li>Attempt to gain unauthorized access to any part of the App or its backend systems.</li>
+        <li>Reverse engineer, decompile, or disassemble any portion of the App.</li>
+        <li>Use automated tools, bots, or scripts to scrape, extract, or abuse the App's features.</li>
+        <li>Impersonate another person or misrepresent your identity or affiliation.</li>
+      </ul>
+    </section>
+
+    <!-- 2 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <h2>Account Registration</h2>
+      </div>
+      <p>To access certain features of GroceryHelp, you must create an account. You agree to:</p>
+      <ul>
+        <li>Provide accurate, current, and complete information during registration.</li>
+        <li>Keep your password secure and not share it with others.</li>
+        <li>Notify us immediately at onecodestudios23@gmail.com if you suspect unauthorized access to your account.</li>
+        <li>Accept responsibility for all activity that occurs under your account.</li>
+      </ul>
+      <p style="margin-top: 12px;">We reserve the right to suspend or terminate accounts that violate these Terms.</p>
+    </section>
+
+    <!-- 3 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <h2>Subscriptions &amp; Billing</h2>
+      </div>
+      <p>GroceryHelp offers a free tier and a paid Pro subscription. The Pro subscription unlocks additional features including an unlimited watchlist and full price history.</p>
+      <ul>
+        <li>Subscriptions are billed through the Google Play Store on a recurring basis.</li>
+        <li>Payment will be charged to your Google Play account at confirmation of purchase.</li>
+        <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</li>
+        <li>You can manage and cancel your subscription at any time via Google Play → Payments &amp; subscriptions.</li>
+        <li>We do not offer refunds for partial subscription periods, except where required by law.</li>
+      </ul>
+      <div class="warning-card">
+        Prices and subscription tiers are subject to change. We will notify you of any pricing changes before they take effect.
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <h2>Price Data &amp; Accuracy</h2>
+      </div>
+      <p>GroceryHelp retrieves price data from publicly available sources. While we strive to provide accurate and up-to-date information, we cannot guarantee that all prices displayed are current, complete, or error-free.</p>
+      <ul>
+        <li>Prices shown in the App are for informational purposes only.</li>
+        <li>Actual prices at stores may differ due to sales, regional variations, or data delays.</li>
+        <li>GroceryHelp is not responsible for any purchasing decisions made based on prices displayed in the App.</li>
+      </ul>
+    </section>
+
+    <!-- 5 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <h2>Intellectual Property</h2>
+      </div>
+      <p>All content within GroceryHelp — including the App's design, code, graphics, logos, and text — is the property of One Code Studios and is protected by applicable intellectual property laws.</p>
+      <p>You are granted a limited, non-exclusive, non-transferable license to use the App for personal purposes in accordance with these Terms. You may not reproduce, distribute, modify, or create derivative works from any part of the App without our express written permission.</p>
+    </section>
+
+    <!-- 6 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <h2>User Content</h2>
+      </div>
+      <p>You may submit content to GroceryHelp such as grocery lists, watchlist items, and a profile picture. By doing so, you grant One Code Studios a limited license to store and use that content solely to provide the App's features to you.</p>
+      <p>You are responsible for ensuring that any content you submit does not infringe on the rights of others or violate any applicable laws.</p>
+    </section>
+
+    <!-- 7 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <h2>Privacy</h2>
+      </div>
+      <p>Your use of GroceryHelp is also governed by our <a href="https://richmiram2.github.io/privacy-policy/" style="color: var(--green-mid); font-weight: 600; text-decoration: none;">Privacy Policy</a>, which is incorporated into these Terms by reference. By using the App, you consent to the collection and use of your information as described in the Privacy Policy.</p>
+    </section>
+
+    <!-- 8 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">8</div>
+        <h2>Disclaimers</h2>
+      </div>
+      <p>GroceryHelp is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied. We do not warrant that:</p>
+      <ul>
+        <li>The App will be uninterrupted, error-free, or free of viruses or other harmful components.</li>
+        <li>The results obtained from using the App will be accurate or reliable.</li>
+        <li>Any errors in the App will be corrected.</li>
+      </ul>
+    </section>
+
+    <!-- 9 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">9</div>
+        <h2>Limitation of Liability</h2>
+      </div>
+      <p>To the fullest extent permitted by law, One Code Studios shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use GroceryHelp, including but not limited to loss of data, loss of profits, or any financial losses resulting from purchasing decisions made using price information from the App.</p>
+    </section>
+
+    <!-- 10 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">10</div>
+        <h2>Termination</h2>
+      </div>
+      <p>We reserve the right to suspend or terminate your access to GroceryHelp at any time, with or without notice, if we believe you have violated these Terms or if we discontinue the App.</p>
+      <p>You may delete your account at any time by contacting us at onecodestudios23@gmail.com. Upon termination, your right to use the App ceases immediately.</p>
+    </section>
+
+    <!-- 11 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">11</div>
+        <h2>Changes to These Terms</h2>
+      </div>
+      <p>We may update these Terms from time to time. When we do, we will update the effective date at the top of this page. For significant changes, we will notify you within the App. Your continued use of GroceryHelp after changes are posted constitutes your acceptance of the updated Terms.</p>
+    </section>
+
+    <!-- 12 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">12</div>
+        <h2>Contact Us</h2>
+      </div>
+      <div class="contact-card">
+        <h3>Questions about these Terms?</h3>
+        <p>Reach out to the One Code Studios team and we'll get back to you as soon as possible.</p>
+        <a href="mailto:onecodestudios23@gmail.com">onecodestudios23@gmail.com</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <strong>One Code Studios</strong>. All rights reserved.</p>
+    <p style="margin-top:6px;">GroceryHelp &mdash; Terms of Service</p>
+  </footer>
+
+</body>
+</html>
