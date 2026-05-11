@@ -193,10 +193,11 @@
     }
 
     ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 8px 0;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      align-items: baseline;
+      gap: 4px 16px;
+      padding: 10px 0;
       border-bottom: 1px solid var(--rule);
       color: var(--text-secondary);
       font-size: 0.97rem;
@@ -204,14 +205,36 @@
 
     ul li:last-child { border-bottom: none; }
 
-    ul li::before {
+    ul li.bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      grid-template-columns: none;
+    }
+
+    ul li.bullet::before {
       content: '';
+      display: inline-block;
       flex-shrink: 0;
       width: 6px;
       height: 6px;
       background: var(--green-light);
       border-radius: 50%;
       margin-top: 9px;
+    }
+
+    ul li::before { display: none; }
+
+    ul li strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    @media (max-width: 520px) {
+      ul li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
     }
 
     /* ── Contact card ────────────────────────────────────────────── */
@@ -314,12 +337,12 @@
       </div>
       <p>We collect the following types of information to provide and improve GroceryHelp:</p>
       <ul>
-        <li><strong>Account information</strong> — your name and email address when you register.</li>
-        <li><strong>Location data </strong> — your city/region (or GPS coordinates if you grant permission) to search for prices near you. We never share precise GPS coordinates with third parties.</li>
-        <li><strong>Grocery lists and watchlist items</strong> — the items you add, search for, and save within the app.</li>
-        <li><strong>Profile picture</strong> — if you choose to upload one.</li>
-        <li><strong>Subscription status</strong> — whether you subscribe to GroceryHelp Pro, managed through Google Play Billing.</li>
-        <li><strong>Usage data</strong> — anonymized crash reports and performance data to help us fix bugs and improve stability.</li>
+        <li><strong>Account information</strong><span>your name and email address when you register.</span></li>
+        <li><strong>Location data</strong><span>your city/region (or GPS coordinates if you grant permission) to search for prices near you. We never share precise GPS coordinates with third parties.</span></li>
+        <li><strong>Grocery lists and watchlist items</strong><span>the items you add, search for, and save within the app.</span></li>
+        <li><strong>Profile picture</strong><span>if you choose to upload one.</span></li>
+        <li><strong>Subscription status</strong><span>whether you subscribe to GroceryHelp Pro, managed through Google Play Billing.</span></li>
+        <li><strong>Usage data</strong><span>anonymized crash reports and performance data to help us fix bugs and improve stability.</span></li>
       </ul>
     </section>
 
@@ -331,12 +354,12 @@
       </div>
       <p>We use the information we collect to:</p>
       <ul>
-        <li>Provide core features — price search, grocery lists, watchlist alerts, and recipe assistance.</li>
-        <li>Send price drop notifications for items on your watchlist (only if you enable this in Settings).</li>
-        <li>Manage your account, authenticate sessions, and maintain security.</li>
-        <li>Process and verify your subscription through Google Play.</li>
-        <li>Diagnose crashes and improve app performance using anonymized analytics.</li>
-        <li>Respond to support requests or feedback you send us.</li>
+        <li class="bullet">Provide core features — price search, grocery lists, watchlist alerts, and recipe assistance.</li>
+        <li class="bullet">Send price drop notifications for items on your watchlist (only if you enable this in Settings).</li>
+        <li class="bullet">Manage your account, authenticate sessions, and maintain security.</li>
+        <li class="bullet">Process and verify your subscription through Google Play.</li>
+        <li class="bullet">Diagnose crashes and improve app performance using anonymized analytics.</li>
+        <li class="bullet">Respond to support requests or feedback you send us.</li>
       </ul>
       <p style="margin-top:16px;">We do <strong>not</strong> sell your personal information to third parties. We do not use your data for advertising.</p>
     </section>
@@ -359,9 +382,9 @@
       </div>
       <p>GroceryHelp integrates with the following third-party services, each with their own privacy practices:</p>
       <ul>
-        <li><strong>Google Play Billing</strong> — handles all subscription purchases. We do not store your payment details.</li>
-        <li><strong>Google Shopping (via Oxylabs)</strong> — used to retrieve publicly available grocery price data. No personal information is transmitted to this service.</li>
-        <li><strong>AWS Lambda &amp; DynamoDB</strong> — powers our backend infrastructure for storing your lists and account data.</li>
+        <li><strong>Google Play Billing</strong><span>handles all subscription purchases. We do not store your payment details.</span></li>
+        <li><strong>Google Shopping (via Oxylabs)</strong><span>used to retrieve publicly available grocery price data. No personal information is transmitted to this service.</span></li>
+        <li><strong>AWS Lambda &amp; DynamoDB</strong><span>powers our backend infrastructure for storing your lists and account data.</span></li>
       </ul>
     </section>
 
@@ -373,8 +396,8 @@
       </div>
       <p>GroceryHelp uses your location solely to find grocery prices near you. You can provide your location in two ways:</p>
       <ul>
-        <li><strong>Manual entry</strong> — type a city and state (e.g. "Seattle, WA"). This text is stored in your account preferences.</li>
-        <li><strong>GPS (optional)</strong> — if you grant location permission, your device coordinates are used to determine your city/region. Precise GPS coordinates are never stored on our servers or shared with third parties.</li>
+        <li><strong>Manual entry</strong><span>type a city and state (e.g. "Seattle, WA"). This text is stored in your account preferences.</span></li>
+        <li><strong>GPS (optional)</strong><span>if you grant location permission, your device coordinates are used to determine your city/region. Precise GPS coordinates are never stored on our servers or shared with third parties.</span></li>
       </ul>
       <p style="margin-top:12px;">You can update or remove your default location at any time in Profile → Settings → Change default location.</p>
     </section>
@@ -397,10 +420,10 @@
       </div>
       <p>You have the right to:</p>
       <ul>
-        <li>Access the personal data we hold about you.</li>
-        <li>Request correction of inaccurate data.</li>
-        <li>Request deletion of your account and associated data.</li>
-        <li>Opt out of price drop notifications at any time via Profile → Settings → Notifications.</li>
+        <li class="bullet">Access the personal data we hold about you.</li>
+        <li class="bullet">Request correction of inaccurate data.</li>
+        <li class="bullet">Request deletion of your account and associated data.</li>
+        <li class="bullet">Opt out of price drop notifications at any time via Profile → Settings → Notifications.</li>
       </ul>
       <p style="margin-top:12px;">To exercise any of these rights, contact us at <strong>onecodestudios23@gmail.com</strong>.</p>
     </section>
