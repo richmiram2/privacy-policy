@@ -1,17 +1,447 @@
 <!DOCTYPE html>
-<html>
-<head><title>GroceryHelp Privacy Policy</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — GroceryHelp</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:   #1B5E20;
+      --green-mid:    #2E7D32;
+      --green-light:  #43A047;
+      --green-pale:   #E8F5E9;
+      --green-border: #C8E6C9;
+      --text-primary: #1A1A1A;
+      --text-secondary: #555;
+      --text-muted:   #888;
+      --surface:      #FFFFFF;
+      --bg:           #F7FBF7;
+      --rule:         #D4E8D4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 60%, var(--green-light) 100%);
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+    }
+
+    .header-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 18px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+    }
+
+    .header-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #fff;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      font-weight: 300;
+      position: relative;
+    }
+
+    /* ── Layout ─────────────────────────────────────────────────────── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Effective date pill ─────────────────────────────────────────── */
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-pale);
+      border: 1px solid var(--green-border);
+      color: var(--green-mid);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin: 32px 0 40px;
+    }
+
+    .date-pill svg {
+      width: 14px; height: 14px;
+      fill: var(--green-mid);
+    }
+
+    /* ── Intro card ───────────────────────────────────────────────── */
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--green-border);
+      border-left: 4px solid var(--green-mid);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      color: var(--text-secondary);
+      font-size: 0.97rem;
+    }
+
+    /* ── Sections ────────────────────────────────────────────────── */
+    section {
+      margin-bottom: 48px;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section:nth-child(1)  { animation-delay: 0.05s; }
+    section:nth-child(2)  { animation-delay: 0.10s; }
+    section:nth-child(3)  { animation-delay: 0.15s; }
+    section:nth-child(4)  { animation-delay: 0.20s; }
+    section:nth-child(5)  { animation-delay: 0.25s; }
+    section:nth-child(6)  { animation-delay: 0.30s; }
+    section:nth-child(7)  { animation-delay: 0.35s; }
+    section:nth-child(8)  { animation-delay: 0.40s; }
+    section:nth-child(9)  { animation-delay: 0.45s; }
+    section:nth-child(10) { animation-delay: 0.50s; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--green-mid);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      color: var(--green-deep);
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      font-size: 0.97rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+
+    ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+      color: var(--text-secondary);
+      font-size: 0.97rem;
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--green-light);
+      border-radius: 50%;
+      margin-top: 9px;
+    }
+
+    /* ── Contact card ────────────────────────────────────────────── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--green-pale), #fff);
+      border: 1px solid var(--green-border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .contact-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--green-deep);
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      font-size: 0.93rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      background: var(--green-mid);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 12px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .contact-card a:hover {
+      background: var(--green-deep);
+      transform: translateY(-1px);
+    }
+
+    /* ── Divider ─────────────────────────────────────────────────── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0 0 48px;
+    }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--rule);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    footer strong { color: var(--green-mid); }
+
+    /* ── Mobile ──────────────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      header { padding: 48px 20px 40px; }
+      .container { padding: 0 16px 60px; }
+      .intro-card { padding: 18px 20px; }
+      .contact-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
 <body>
-<h1>GroceryHelp Privacy Policy</h1>
-<p>Last updated: May 2026</p>
 
-<h2>Information We Collect</h2>
-<p>GroceryHelp collects your location to find nearby grocery prices. We collect your email and name for account creation. Camera access is used only for profile photos and is never stored on our servers.</p>
+  <!-- Header -->
+  <header>
+    <div class="header-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 1C8.676 1 6 3.676 6 7v1H4a1 1 0 0 0-1 1v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v1H8V7c0-2.276 1.724-4 4-4zm0 9a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+      </svg>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p>GroceryHelp — One Code Studios</p>
+  </header>
 
-<h2>How We Use Information</h2>
-<p>Your data is used solely to provide grocery price comparison features. We do not sell your data to third parties.</p>
+  <div class="container">
 
-<h2>Contact</h2>
-<p>Questions? Email us at your-email@example.com</p>
+    <div class="date-pill">
+      <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 18H5V8h14v13z"/></svg>
+      Effective: January 1, 2026
+    </div>
+
+    <div class="intro-card">
+      This Privacy Policy explains how GroceryHelp ("we," "us," or "our"), developed by One Code Studios, collects, uses, and protects your information when you use the GroceryHelp mobile application. By using GroceryHelp, you agree to the practices described here.
+    </div>
+
+    <hr />
+
+    <!-- 1 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <h2>Information We Collect</h2>
+      </div>
+      <p>We collect the following types of information to provide and improve GroceryHelp:</p>
+      <ul>
+        <li><strong>Account information</strong> — your name and email address when you register.</li>
+        <li><strong>Location data</strong> — your city/region (or GPS coordinates if you grant permission) to search for prices near you. We never share precise GPS coordinates with third parties.</li>
+        <li><strong>Grocery lists and watchlist items</strong> — the items you add, search for, and save within the app.</li>
+        <li><strong>Profile picture</strong> — if you choose to upload one.</li>
+        <li><strong>Subscription status</strong> — whether you subscribe to GroceryHelp Pro, managed through Google Play Billing.</li>
+        <li><strong>Usage data</strong> — anonymized crash reports and performance data to help us fix bugs and improve stability.</li>
+      </ul>
+    </section>
+
+    <!-- 2 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <h2>How We Use Your Information</h2>
+      </div>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Provide core features — price search, grocery lists, watchlist alerts, and recipe assistance.</li>
+        <li>Send price drop notifications for items on your watchlist (only if you enable this in Settings).</li>
+        <li>Manage your account, authenticate sessions, and maintain security.</li>
+        <li>Process and verify your subscription through Google Play.</li>
+        <li>Diagnose crashes and improve app performance using anonymized analytics.</li>
+        <li>Respond to support requests or feedback you send us.</li>
+      </ul>
+      <p style="margin-top:16px;">We do <strong>not</strong> sell your personal information to third parties. We do not use your data for advertising.</p>
+    </section>
+
+    <!-- 3 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <h2>Data Storage &amp; Security</h2>
+      </div>
+      <p>Your data is stored securely on AWS (Amazon Web Services) infrastructure in the United States. We use industry-standard measures including encrypted connections (HTTPS/TLS) and access controls to protect your information.</p>
+      <p>While we take reasonable precautions, no method of transmission or storage is 100% secure. We encourage you to use a strong, unique password for your GroceryHelp account.</p>
+    </section>
+
+    <!-- 4 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <h2>Third-Party Services</h2>
+      </div>
+      <p>GroceryHelp integrates with the following third-party services, each with their own privacy practices:</p>
+      <ul>
+        <li><strong>Google Play Billing</strong> — handles all subscription purchases. We do not store your payment details.</li>
+        <li><strong>Google Shopping (via Oxylabs)</strong> — used to retrieve publicly available grocery price data. No personal information is transmitted to this service.</li>
+        <li><strong>AWS Lambda &amp; DynamoDB</strong> — powers our backend infrastructure for storing your lists and account data.</li>
+      </ul>
+    </section>
+
+    <!-- 5 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <h2>Location Information</h2>
+      </div>
+      <p>GroceryHelp uses your location solely to find grocery prices near you. You can provide your location in two ways:</p>
+      <ul>
+        <li><strong>Manual entry</strong> — type a city and state (e.g. "Seattle, WA"). This text is stored in your account preferences.</li>
+        <li><strong>GPS (optional)</strong> — if you grant location permission, your device coordinates are used to determine your city/region. Precise GPS coordinates are never stored on our servers or shared with third parties.</li>
+      </ul>
+      <p style="margin-top:12px;">You can update or remove your default location at any time in Profile → Settings → Change default location.</p>
+    </section>
+
+    <!-- 6 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <h2>Data Retention</h2>
+      </div>
+      <p>We retain your account data for as long as your account is active. If you delete your account, we will remove your personal data from our systems within 30 days, except where retention is required by law.</p>
+      <p>Anonymized, aggregated usage data (containing no personally identifiable information) may be retained indefinitely to improve the app.</p>
+    </section>
+
+    <!-- 7 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <h2>Your Rights</h2>
+      </div>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you.</li>
+        <li>Request correction of inaccurate data.</li>
+        <li>Request deletion of your account and associated data.</li>
+        <li>Opt out of price drop notifications at any time via Profile → Settings → Notifications.</li>
+      </ul>
+      <p style="margin-top:12px;">To exercise any of these rights, contact us at <strong>onecodestudios23@gmail.com</strong>.</p>
+    </section>
+
+    <!-- 8 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">8</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>GroceryHelp is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will promptly delete it.</p>
+    </section>
+
+    <!-- 9 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">9</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. For significant changes, we will notify you within the app. Your continued use of GroceryHelp after changes are posted constitutes acceptance of the updated policy.</p>
+    </section>
+
+    <!-- 10 -->
+    <section>
+      <div class="section-header">
+        <div class="section-number">10</div>
+        <h2>Contact Us</h2>
+      </div>
+      <div class="contact-card">
+        <h3>Questions or concerns?</h3>
+        <p>We're happy to help. Reach out to the One Code Studios team and we'll get back to you as soon as possible.</p>
+        <a href="mailto:onecodestudios23@gmail.com">onecodestudios23@gmail.com</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <strong>One Code Studios</strong>. All rights reserved.</p>
+    <p style="margin-top:6px;">GroceryHelp &mdash; Privacy Policy</p>
+  </footer>
+
 </body>
 </html>
